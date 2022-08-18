@@ -10,8 +10,10 @@ if ($con-> connect_error) {
     die("Connection Error " . $conn->connect_error);
 }
 
+$from = '08/17/2022';
+$until = '08/17/2022';
 
-$sql = "SELECT * from incoming  WHERE `date` BETWEEN '08/10/2022' AND '08/20/2022'";
+$sql = "SELECT * from incoming  WHERE `date` BETWEEN '$from' AND '$until'";
 
 $result = $con->query($sql);
 

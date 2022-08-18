@@ -10,7 +10,7 @@ if ($con-> connect_error) {
 }
 
 
-if (isset($_POST["from"]) != '' AND isset($_POST["until"]) != '' ) {
+if (isset($_POST["from"]) == '' AND isset($_POST["until"]) == '' ) {
     
     $sql = "SELECT * from incoming  ORDER BY `incoming`.`date` DESC";
    
@@ -38,8 +38,7 @@ if (isset($_POST["from"]) != '' AND isset($_POST["until"]) != '' ) {
         $from = $_POST["from"];
         $until = $_POST["until"];
    
-       $sql = "SELECT * from incoming  WHERE `date` BETWEEN '$from' AND '$until'";
-   
+ $sql = "SELECT * from incoming  WHERE `date` BETWEEN '$from' AND '$until' ORDER BY `incoming`.`date` DESC";
    
        $result = $con->query($sql);
    
