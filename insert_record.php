@@ -23,17 +23,17 @@ else {
     return;
 }
 
-if (isset($_POST["status"])) {
+if (isset($_POST["mayors"])) {
 
-    $status = $_POST["status"];
+    $mayors = $_POST["mayors"];
 
 }
 else {
     return;
 }
-if (isset($_POST["remarks"])) {
+if (isset($_POST["administrators"])) {
 
-    $remarks = $_POST["remarks"];
+    $administrators = $_POST["administrators"];
 
 }
 else {
@@ -43,6 +43,15 @@ else {
 if (isset($_POST["controlNumber"])) {
 
     $controlNumber = $_POST["controlNumber"];
+
+}
+else {
+    return;
+}
+
+if (isset($_POST["otmcontrolNumber"])) {
+
+    $otmcontrolNumber = $_POST["otmcontrolNumber"];
 
 }
 else {
@@ -76,6 +85,14 @@ else {
     return;
 }
 
+if (isset($_POST["file_name"])) {
+
+    $file_name = $_POST["file_name"];
+
+}
+else {
+    return;
+}
 
 
 
@@ -83,7 +100,9 @@ else {
 
 
 
-$query= "INSERT INTO `incoming`(`particulars`, `agency`, `status`, `remarks`, `control number`, `date`, `datemade`, `file_link`) VALUES ('$particular', '$agency', '$status', '$remarks', '$controlNumber', '$date', '$datemade', '$file_link')";
+
+
+$query= "INSERT INTO `incoming`(`particulars`, `agency`, `mayors`, `administrators`, `control number`,`otmcontrolNumber`, `date`, `datemade`, `file_link` , `file_name`) VALUES ('$particular', '$agency', '$mayors', '$administrators', '$controlNumber','$otmcontrolNumber', '$date', '$datemade', '$file_link', '$file_name')";
 
 $exe=mysqli_query($con, $query);
 

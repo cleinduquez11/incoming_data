@@ -3,11 +3,10 @@
 class Uploads {
     private $respond;
 
-    public function uploadFile(string $user_file, string $user_filename, string $extension)
+    public function uploadFile(string $user_file, string $user_filename, string $extension, string $ctln)
     {
-        include("dbconnection.php");
-        $con = dbconnection();
-        $path = "incoming_files/$user_filename";
+     
+        $path = "incoming_files/$ctln";
 
         if (!file_exists($path)) {
             mkdir($path);
@@ -33,9 +32,6 @@ class Uploads {
             );
         }
 
-        // $query= "INSERT INTO `incoming`(`file_link`) VALUES ('$output_file_path')";
-
-        // $exe=mysqli_query($con, $query);
 
 
         return json_encode($this->$respond);

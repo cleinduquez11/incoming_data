@@ -37,7 +37,7 @@ echo json_encode($response);
 else {
      $search = $_POST["search"];
 
-    $sql = "SELECT * from incoming  WHERE `incoming`.`agency` = '$search' OR `incoming`.`particulars` = '$search' OR `incoming`.`control number` = '$search' OR `incoming`.`status` = '$search' ORDER BY `incoming`.`date` DESC";
+    $sql = "SELECT * from incoming  WHERE `incoming`.`agency` = '$search' OR `incoming`.`particulars` = '$search' OR `incoming`.`control number` = '$search' OR `incoming`.`otmcontrolNumber` = '$search' ORDER BY `incoming`.`date` DESC";
 
 
     $result = $con->query($sql);
